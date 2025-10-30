@@ -1,0 +1,22 @@
+# Bước 1: Chọn một "hộp rỗng" có sẵn Python
+# Chúng ta dùng một phiên bản nhẹ của Python 3.9
+FROM python:3.11-slim
+
+# Bước 2: Đặt "địa chỉ làm việc" bên trong hộp
+WORKDIR /app
+
+# Bước 3: Sao chép "bản kê vật liệu" vào hộp
+COPY requirements.txt .
+
+# Bước 4: Cài đặt tất cả "vật liệu" cần thiết
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Bước 5: Sao chép toàn bộ "ngôi nhà" (mã nguồn) vào hộp
+COPY . .
+
+# Bước 6: Dán nhãn "cửa vào" của ngôi nhà (port 8000)
+EXPOSE 8000
+
+# Bước 7: Hướng dẫn cách "khởi động ngôi nhà" khi hộp được mở
+# Chạy máy chủ Uvicorn để phục vụ ứng dụng FastAPI
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
