@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cất Cánh Thành Công!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4a90e2);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .rocket {
+            font-size: 5rem;
+            animation: launch 2s infinite ease-in-out;
+        }
+        @keyframes launch {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        .docs-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 12px 25px;
+            background-color: #F5A623;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .docs-button:hover {
+            transform: scale(1.05);
+            background-color: #f7b94e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rocket">🚀</div>
+        <h1>Cất Cánh Thành Công!</h1>
+        <p>Ứng dụng FastAPI của bạn đang bay cao trên mây AWS.</p>
+        <a href="/docs" class="docs-button">Khám phá Tài liệu API</a>
+    </div>
+</body>
+</html>
